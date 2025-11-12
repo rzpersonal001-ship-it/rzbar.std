@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "profil": "Tentang",
+    "services": "Layanan",
+    "portfolio": "Karya",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "title": "Desain. Data. Dampak.",
+    "subtitle": "Kami mendesain visual, membangun situs web, dan mengolah data menjadi strategi bisnis yang berdampak.",
+    "cta": "Ayo Kolaborasi"
+  },
+  "profil": {
+    "title": "Tentang Kami",
+    "description": "Kami adalah tim kreatif yang berfokus pada desain web modern, UI/UX, dan solusi berbasis data."
+  },
+  "services": {
+    "title": "Layanan Kami",
+    "uiux": "Desain UI/UX",
+    "webdev": "Pengembangan Web",
+    "data": "Visualisasi Data"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "button": "Kirim Pesan"
+  },
+  "footer": {
+    "rights": "© 2025 RZBAR.STD — Hak Cipta Dilindungi"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "profil": "Profile",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Design. Data. Impact.",
+    "subtitle": "We design visuals, build websites, and turn data into business impact.",
+    "cta": "Let’s Collaborate"
+  },
+  "profil": {
+    "title": "About Us",
+    "description": "We are a creative team specializing in modern web design, UI/UX, and data-driven solutions."
+  },
+  "services": {
+    "title": "Our Services",
+    "uiux": "UI/UX Design",
+    "webdev": "Web Development",
+    "data": "Data Visualization"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "button": "Send Message"
+  },
+  "footer": {
+    "rights": "© 2025 RZBAR.STD — All Rights Reserved"
+  }
+}

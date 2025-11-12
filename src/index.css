@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------- *\
+ * BASE
+\* ---------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-main: 'Rubik', sans-serif;
+}
+
+body {
+  @apply bg-zinc-900 text-zinc-50;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Pastikan placeholder Firebase tetap konsisten */
+#message, #load {
+  font-family: 'Rubik', sans-serif;
+  color: #fafafa;
+}
+
+/* ---------------------------------- *\
+ * TYPOGRAPHY
+\* ---------------------------------- */
+
+.headline-1,
+.headline-2 {
+  @apply max-w-max;
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headline-1 {
+  @apply text-5xl leading-tight font-semibold lg:text-[55px] lg:leading-[1.15]
+}
+
+.headline-2 {
+  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold
+}
+
+.title-1 {
+  @apply text-[22px] font-normal
+}
+
+
+
+/* ---------------------------------- *\
+ * UTILITIES
+\* ---------------------------------- */
+
+.material-symbols-rounded {
+  @apply w-[1em] h-[1em] overflow-hidden;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.container {
+  @apply px-4 mx-auto lg:px-8 xl:max-w-6xl;
+}
+
+.img-box {
+  @apply bg-zinc-700 overflow-hidden;
+}
+
+.img-cover {
+  @apply w-full h-full object-cover
+}
+
+.section {
+  @apply pt-20 lg:pt-32
+}
+
+.reveal-up {
+  @apply translate-y-20 opacity-0
+}
+
+
+
+/* ---------------------------------- *\
+ * COMPONENTS
+\* ---------------------------------- */
+
+/* Menu btn */
+
+.menu-btn {
+  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95
+}
+
+/* 🌐 Navbar container */
+
+.navbar {
+  /* MOBILE dropdown (posisi di kanan sejajar tombol bahasa) */
+  @apply absolute top-[3.25rem] right-4 min-w-44 flex flex-col items-stretch space-y-1 p-2 bg-zinc-900/95 
+  rounded-2xl ring-1 ring-inset ring-zinc-50/10 opacity-0 scale-95 invisible backdrop-blur-2xl 
+  transition-all duration-300 overflow-hidden z-40;
+
+ 
+  /* DESKTOP fixed tengah */
+  @apply md:fixed md:top-3.5 md:inset-x-0 md:mx-auto md:w-fit md:flex-row md:items-center md:justify-center 
+  md:gap-3 md:px-2 md:py-2 md:bg-zinc-900/80 md:rounded-full md:backdrop-blur-md 
+  md:border md:border-zinc-700/30 md:shadow-lg md:opacity-100 md:visible md:scale-100 md:space-y-0;
+}
+
+/* Saat scroll mengecil */
+.navbar.scrolled {
+  @apply bg-zinc-900/60 border border-zinc-700/20 shadow-md scale-95 transition-all duration-300;
+}
+
+/* Saat dropdown aktif */
+.navbar.active {
+  @apply opacity-100 scale-100 visible;
+}
+
+/* 🔗 Link */
+.nav-link {
+  @apply relative z-10 grid items-center h-9 px-5 text-sm font-medium tracking-wide 
+  text-zinc-300 hover:text-white rounded-full transition-colors duration-300 select-none whitespace-nowrap;
+  font-family: 'Rubik', sans-serif;
+}
+
+.nav-link:hover {
+  @apply bg-zinc-800/60;
+}
+
+.nav-link.active {
+  @apply font-semibold transition-all duration-500;
+  color: #FFD93B; /* 🔶 warna kuning default (mobile) */
+}
+
+/* 💻 Warna aktif khusus desktop */
+@media (min-width: 768px) {
+  .nav-link.active {
+    color: #111111; /* atau text-zinc-900 */
+  }
+}
+
+/* 🟡 Active highlight (desktop only) */
+.navbar .active-box {
+  @apply absolute bg-zinc-50 rounded-full -z-10 transition-all duration-500 ease-in-out shadow-sm hidden md:block;
+  transform-origin: center;
+  will-change: transform, width, height;
+  
+
+}
+
+/* 📱 MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+  .navbar {
+    @apply flex flex-col items-stretch w-44 right-2;
+  }
+
+  .nav-link {
+    @apply w-full text-left px-4 py-2;
+  }
+}
+
+
+
+/* Button */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-medium text-sm
+  ring-1 ring-zinc-50/5 ring-inset transition-all duration-200 select-none;
+  line-height: 1;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+/* Contact Me button — rounded full style */
+.btn-secondary {
+  @apply bg-white text-zinc-900 font-medium rounded-full px-6 py-2 hover:bg-zinc-200 transition-all duration-300;
+}
+
+
+/* Untuk semua ikon dalam tombol — biar sejajar dan tidak kepotong */
+.btn .material-symbols-rounded {
+  @apply text-[18px] leading-none;
+  transform: translateY(0.5px);
+}
+
+.btn-primary {
+  @apply bg-[#FFD93B] text-zinc-950 hover:bg-[#f2c522] active:bg-[#e6b800];
+  min-height: 2.75rem; /* 🧩 pastikan cukup tinggi (h-11 ≈ 44px) */
+  padding-top: 0.75rem; 
+  padding-bottom: 0.75rem;
+}
+
+
+.btn-outline {
+  @apply bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800;
+  min-height: 2.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+
+/* Text field */
+
+.label {
+  @apply block text-zinc-200 text-sm font-normal mb-2
+}
+
+.text-field {
+  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2
+}
+
+.text-field::placeholder {
+  @apply text-zinc-400
+}
+
+
+/* --- Typing per kata: "Design," lalu "Data," lalu "Impact." --- */
+
+.typing-line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0ch;
+  color: #FFD93B;
+  padding-bottom: 0.2em;   /* beri ruang sedikit di bawah */
+  line-height: 0.80;       /* pastikan tinggi baris cukup */
+  margin-bottom: 0.15em;   /* jarak antarbaris aman */
+}
+
+/* Baris 1: Design, */
+.typing-line-1 {
+  animation: typing-word-1 1.2s steps(7, end) forwards;
+}
+
+/* Baris 2: Data, (mulai setelah baris 1 selesai) */
+.typing-line-2 {
+  animation: typing-word-2 1s steps(5, end) forwards;
+  animation-delay: 1.2s;
+}
+
+/* Baris 3: Impact. (ada kursor berkedip di akhir) */
+.typing-line-3 {
+  border-right: 3px solid #FFD93B;
+  animation: typing-word-3 1.2s steps(7, end) forwards,
+             blink-caret 0.75s step-end infinite;
+  animation-delay: 2.2s;
+}
+
+/* Biar teks yang sudah diketik tetap tampil */
+.typing-line-1,
+.typing-line-2,
+.typing-line-3 {
+  animation-fill-mode: forwards;
+}
+
+/* Panjang tiap kata (pakai ch = karakter) */
+@keyframes typing-word-1 {
+  from { width: 0ch; }
+  to   { width: 7ch; }  /* "Design," = 7 karakter */
+}
+
+@keyframes typing-word-2 {
+  from { width: 0ch; }
+  to   { width: 5ch; }  /* "Data," = 5 karakter */
+}
+
+@keyframes typing-word-3 {
+  from { width: 0ch; }
+  to   { width: 7ch; }  /* "Impact." = 7 karakter */
+}
+
+/* Kursor berkedip di baris terakhir */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+
+
+
+
+/* Floating WhatsApp Button (melayang di kanan bawah layar) */
+
+.floating-whatsapp {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.hero-subtitle b {
+  color: #FFD93B;
+  font-weight: 700;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  margin: auto;
+}
