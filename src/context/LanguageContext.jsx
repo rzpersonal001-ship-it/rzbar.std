@@ -1,13 +1,24 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import i18n from "../i18n/index.js";
 
-// Buat context
 const LanguageContext = createContext();
 
-// Provider (membungkus semua komponen agar bisa akses bahasa)
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState(i18n.language || "en");
 
-  const toggleLanguage = () => setLang((prev) => (prev === "en" ? "id" : "en"));
+  useEffect(() => {
+    const handleLanguageChange = (lng) => setLang(lng);
+    i18n.on("languageChanged", handleLanguageChange);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, []);
+
+  const toggleLanguage = (nextLang) => {
+    const language = nextLang || (lang === "en" ? "id" : "en");
+    i18n.changeLanguage(language);
+    setLang(language);
+  };
 
   return (
     <LanguageContext.Provider value={{ lang, toggleLanguage }}>
@@ -16,5 +27,4 @@ export const LanguageProvider = ({ children }) => {
   );
 };
 
-// Hook agar mudah digunakan
 export const useLanguage = () => useContext(LanguageContext);

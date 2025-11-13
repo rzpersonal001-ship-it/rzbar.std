@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { getBlogPosts } from "../utils/firebase";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
+  const { t } = useTranslation();
+  const blogContent = t("blog", { returnObjects: true });
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -18,7 +21,7 @@ const Blog = () => {
     <section className="min-h-screen bg-zinc-950 text-white px-4 py-20">
       <div className="container mx-auto max-w-5xl">
         <h1 className="text-4xl sm:text-5xl font-bold text-[#FFD93B] mb-12 text-center">
-          Blog & Insights
+          {blogContent.title}
         </h1>
 
         {!selectedPost && (
@@ -55,7 +58,7 @@ const Blog = () => {
               onClick={() => setSelectedPost(null)}
               className="mb-6 text-[#FFD93B] hover:underline"
             >
-              ← Back to all posts
+              {blogContent.back}
             </button>
 
             <h2 className="text-3xl font-bold mb-3">{selectedPost.title}</h2>

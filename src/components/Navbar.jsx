@@ -6,6 +6,7 @@
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Navbar = ({ navOpen }) => {
   const lastActiveLink = useRef(null);
@@ -50,14 +51,16 @@ const Navbar = ({ navOpen }) => {
     initActiveBox();
   };
 
+  const { t } = useTranslation();
+
   const navItems = [
-    { label: "Home", link: "#home", className: "nav-link active", ref: lastActiveLink },
-    { label: "Profil", link: "#profil", className: "nav-link" },
-    { label: "Services", link: "#services", className: "nav-link" },
-    { label: "Portofolio", link: "#portofolio", className: "nav-link" },
-    { label: "Blog", href: "/blog", className: "nav-link" },
-    { label: "FAQ", link: "#faq", className: "nav-link" },
-    { label: "Contact / Pay", link: "#contact", className: "nav-link md:hidden" },
+    { key: "home", link: "#home", className: "nav-link active", ref: lastActiveLink },
+    { key: "profil", link: "#profil", className: "nav-link" },
+    { key: "services", link: "#services", className: "nav-link" },
+    { key: "portfolio", link: "#portofolio", className: "nav-link" },
+    { key: "blog", href: "/blog", className: "nav-link" },
+    { key: "faq", link: "#faq", className: "nav-link" },
+    { key: "contact", link: "#contact", className: "nav-link md:hidden" },
   ];
 
   return (
@@ -71,7 +74,7 @@ const Navbar = ({ navOpen }) => {
         top: "1rem",
       }}
     >
-      {navItems.map(({ label, link, href, className, ref }, key) => {
+      {navItems.map(({ key: labelKey, link, href, className, ref }, key) => {
         if (href) {
           return (
             <Link
@@ -81,7 +84,7 @@ const Navbar = ({ navOpen }) => {
               className={className}
               onClick={activeCurrentLink}
             >
-              {label}
+              {t(`nav.${labelKey}`)}
             </Link>
           );
         }
@@ -97,7 +100,7 @@ const Navbar = ({ navOpen }) => {
             className={className}
             onClick={activeCurrentLink}
           >
-            {label}
+            {t(`nav.${labelKey}`)}
           </a>
         );
       })}

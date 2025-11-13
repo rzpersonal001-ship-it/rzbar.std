@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { useTranslation } from "react-i18next";
 
 const portofolios = [
   {
@@ -52,9 +53,9 @@ const portofolios = [
 ];
 
 const categories = [
-  { slug: "all", label: "All" },
-  { slug: "web", label: "Web Development" },
-  { slug: "uiux", label: "UI/UX Design" },
+  { slug: "all" },
+  { slug: "web" },
+  { slug: "uiux" },
 ];
 
 const Portofolio = () => {
@@ -92,14 +93,17 @@ const Portofolio = () => {
     setCurrentPage(1);
   };
 
+  const { t } = useTranslation();
+  const portfolioContent = t("portfolio", { returnObjects: true });
+
   return (
     <section id="portofolio" className="section">
       <div className="container">
-        <h2 className="headline-2 mb-8 reveal-up">My portfolio highlights</h2>
+        <h2 className="headline-2 mb-8 reveal-up">{portfolioContent.title}</h2>
 
         {/* Tabs kategori */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {categories.map(({ slug, label }) => (
+          {categories.map(({ slug }) => (
             <button
               key={slug}
               onClick={() => handleCategory(slug)}
@@ -109,7 +113,7 @@ const Portofolio = () => {
                   : "border-zinc-600 text-zinc-400 hover:text-white hover:border-white/60"
               }`}
             >
-              {label}
+              {portfolioContent.categories?.[slug]}
             </button>
           ))}
         </div>
