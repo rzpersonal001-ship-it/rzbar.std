@@ -15,6 +15,7 @@ import {
   FaGithub,
   FaXTwitter,
 } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const socialLinks = [
   { alt: "Facebook", href: "/coming-soon", icon: <FaFacebookF /> },
@@ -29,22 +30,25 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const { t } = useTranslation();
+  const contactContent = t("contact", { returnObjects: true });
+
   return (
     <section id="contact" className="section">
       <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
         {/* LEFT SIDE */}
         <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
           <h2 className="headline-2 lg:max-w-[12ch] reveal-up">
-            Contact me for collaboration
+            {contactContent.title}
           </h2>
 
           <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] lg:max-w-[30ch] reveal-up">
-            Reach out today to discuss your project needs and start collaborating on something amazing!
+            {contactContent.description}
           </p>
 
           <p className="flex items-center gap-5 text-zinc-400 text-xs font-light mt-3 mb-8 max-w-[50ch] lg:max-w-[41ch] reveal-up">
             <MapPin className="w-10 h-10 text-zinc-500 shrink-0" />
-            Jl. Kuin Selatan, Kec. Banjarmasin Barat, Kota Banjarmasin, Kalimantan Selatan 70123
+            {contactContent.address}
           </p>
 
           {/* SOCIAL ICONS */}
@@ -84,7 +88,7 @@ export default function Contact() {
           <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
             <div className="mb-4">
               <label htmlFor="name" className="label reveal-up">
-                Name
+                {contactContent.form?.nameLabel}
               </label>
               <input
                 type="text"
@@ -92,14 +96,14 @@ export default function Contact() {
                 id="name"
                 autoComplete="name"
                 required
-                placeholder="Name"
+                placeholder={contactContent.form?.namePlaceholder}
                 className="text-field reveal-up"
               />
             </div>
 
             <div className="mb-4">
               <label htmlFor="email" className="label reveal-up">
-                Email
+                {contactContent.form?.emailLabel}
               </label>
               <input
                 type="email"
@@ -107,7 +111,7 @@ export default function Contact() {
                 id="email"
                 autoComplete="email"
                 required
-                placeholder="rzbar.std@gmail.com"
+                placeholder={contactContent.form?.emailPlaceholder}
                 className="text-field reveal-up"
               />
             </div>
@@ -115,13 +119,12 @@ export default function Contact() {
 
           <div className="mb-4">
             <label htmlFor="message" className="label reveal-up">
-              Message
+              {contactContent.form?.messageLabel}
             </label>
             <textarea
               name="message"
               id="message"
-              placeholder="Ready to start your next project?
-Let’s create something impactful together."
+              placeholder={contactContent.form?.messagePlaceholder}
               required
               className="text-field resize-y min-h-32 max-h-80 reveal-up"
             ></textarea>
@@ -131,12 +134,12 @@ Let’s create something impactful together."
             type="submit"
             className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
           >
-            Submit
+            {contactContent.submit}
           </button>
 
           <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
             <p className="text-zinc-400 text-sm mb-3">
-              Prefer quick response or instant booking? Choose one below 👇
+              {contactContent.quickResponse}
             </p>
 
             {/* WhatsApp */}
@@ -147,7 +150,7 @@ Let’s create something impactful together."
               className="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-medium px-6 py-3 rounded-full shadow-md shadow-green-500/20 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
             >
               <i className="fa-brands fa-whatsapp text-lg"></i>
-              Chat via WhatsApp
+              {contactContent.whatsapp}
             </a>
 
             {/* Payment */}
@@ -158,7 +161,7 @@ Let’s create something impactful together."
               className="flex items-center gap-2 bg-[#FFD93B] hover:bg-[#f2c522] text-zinc-900 font-medium px-6 py-3 rounded-full shadow-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
             >
               <i className="fa-solid fa-credit-card text-lg"></i>
-              Pay / Book Project
+              {contactContent.payment}
             </a>
           </div>
         </form>

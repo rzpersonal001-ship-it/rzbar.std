@@ -4,28 +4,157 @@
     "profil": "Tentang",
     "services": "Layanan",
     "portfolio": "Karya",
-    "contact": "Kontak"
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Kontak / Bayar"
   },
   "hero": {
-    "title": "Desain. Data. Dampak.",
+    "status": "Tersedia untuk Kolaborasi",
+    "titleLines": ["Desain,", "Data,", "Dampak."],
     "subtitle": "Kami mendesain visual, membangun situs web, dan mengolah data menjadi strategi bisnis yang berdampak.",
-    "cta": "Ayo Kolaborasi"
+    "highlights": [
+      { "title": "Desain", "description": "Visual yang", "highlight": "menghubungkan" },
+      { "title": "Web", "description": "Situs web yang", "highlight": "berkinerja" },
+      { "title": "Data", "description": "Laporan yang menuntun", "highlight": "keputusan" }
+    ],
+    "ctaPrimary": "Mari Bicara – Konsultasi Gratis",
+    "ctaSecondary": "Lihat Layanan"
   },
   "profil": {
-    "title": "Tentang Kami",
-    "description": "Kami adalah tim kreatif yang berfokus pada desain web modern, UI/UX, dan solusi berbasis data."
+    "description": "Halo! Saya Reza, seorang profesional kreatif yang bekerja bersama tim untuk membantu individu dan bisnis berkomunikasi lebih efektif melalui desain dan solusi data yang berdampak. Dengan memadukan kreativitas visual dan ketepatan teknis, kami mengubah ide Anda menjadi visual berkualitas tinggi dan laporan cerdas yang indah sekaligus fungsional.",
+    "stats": [
+      { "label": "Proyek selesai", "number": 99 },
+      { "label": "Tahun pengalaman", "number": 5 }
+    ]
   },
   "services": {
     "title": "Layanan Kami",
-    "uiux": "Desain UI/UX",
-    "webdev": "Pengembangan Web",
-    "data": "Visualisasi Data"
+    "description": "Kami menghadirkan layanan kreatif yang autentik dan berbasis data untuk membantu bisnis Anda bertumbuh secara tepat dan penuh makna.",
+    "note": "Butuh layanan custom atau kolaborasi?",
+    "cta": "Yuk diskusikan proyekmu.",
+    "cards": {
+      "branding": {
+        "title": "Branding & Desain Grafis",
+        "description": "Mulai dari pembuatan logo hingga sistem identitas visual lengkap, kami merancang visual brand yang otentik dan mudah diingat.",
+        "items": [
+          "Logo & Identitas Brand",
+          "Desain Flyer & Brosur",
+          "Desain CV / Resume",
+          "Desain Kemasan",
+          "Poster & Banner",
+          "Konten Media Sosial"
+        ]
+      },
+      "web": {
+        "title": "Pengembangan Web & Landing Page",
+        "description": "Kami merancang dan membangun situs yang responsif, cepat, dan siap meningkatkan pengalaman pengguna serta konversi.",
+        "items": [
+          "Portofolio Pribadi",
+          "Website Profil Perusahaan",
+          "Landing Page Kampanye",
+          "Setup & Kustomisasi WordPress",
+          "Frontend (React JS, Tailwind CSS)"
+        ]
+      },
+      "data": {
+        "title": "Solusi Data Bisnis & Akuntansi",
+        "description": "Ubah data mentah menjadi insight finansial dan operasional yang bermakna. Kami bantu otomasi data, pelaporan bisnis, hingga konsultasi akuntansi untuk keputusan yang lebih tepat.",
+        "items": [
+          "Dashboard & Laporan Excel",
+          "Otomasi Data Finansial",
+          "Setup Sistem Akuntansi",
+          "Analisis Bisnis & Biaya",
+          "Konsultasi Keuangan"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "Tools yang Mendukung Karya Kami",
+    "description": "Jelajahi tools kreatif dan teknologi yang kami gunakan untuk menghadirkan proyek modern dan berdampak.",
+    "categories": {
+      "all": "Semua",
+      "graphic": "Desain Grafis",
+      "web": "Web & Landing Page",
+      "data": "Layanan Data & Dokumen",
+      "finance": "Akuntansi & Keuangan"
+    },
+    "tools": {
+      "figma": { "label": "Figma", "description": "Tools desain" },
+      "photoshop": { "label": "Photoshop", "description": "Editing foto" },
+      "illustrator": { "label": "Illustrator", "description": "Vector & Branding" },
+      "wordpress": { "label": "WordPress", "description": "Setup situs & blog" },
+      "react": { "label": "React JS", "description": "Framework frontend" },
+      "excel": { "label": "Excel (Level Lanjutan)", "description": "Data & Laporan" },
+      "lightroom": { "label": "Lightroom", "description": "Color grading" },
+      "canva": { "label": "Canva", "description": "Desain konten" },
+      "indesign": { "label": "InDesign", "description": "Layout & Publishing" },
+      "vscode": { "label": "Visual Code", "description": "Code editor" },
+      "tailwind": { "label": "Tailwind CSS", "description": "Utility CSS" },
+      "word": { "label": "Word", "description": "Desain dokumen" },
+      "powerpoint": { "label": "PowerPoint", "description": "Presentasi" },
+      "accurate": { "label": "Accurate", "description": "Akuntansi & Keuangan" }
+    }
+  },
+  "portfolio": {
+    "title": "Sorotan portofolio",
+    "categories": {
+      "all": "Semua",
+      "web": "Pengembangan Web",
+      "uiux": "Desain UI/UX"
+    }
   },
   "contact": {
-    "title": "Hubungi Kami",
-    "button": "Kirim Pesan"
+    "title": "Hubungi kami untuk kolaborasi",
+    "description": "Yuk diskusikan kebutuhan proyekmu dan mulai ciptakan sesuatu yang luar biasa!",
+    "address": "Jl. Kuin Selatan, Kec. Banjarmasin Barat, Kota Banjarmasin, Kalimantan Selatan 70123",
+    "form": {
+      "nameLabel": "Nama",
+      "namePlaceholder": "Nama",
+      "emailLabel": "Email",
+      "emailPlaceholder": "rzbar.std@gmail.com",
+      "messageLabel": "Pesan",
+      "messagePlaceholder": "Siap memulai proyek berikutnya? Mari ciptakan sesuatu yang berdampak bersama."
+    },
+    "submit": "Kirim",
+    "quickResponse": "Butuh respon cepat atau booking instan? Pilih salah satu di bawah 👇",
+    "whatsapp": "Chat via WhatsApp",
+    "payment": "Bayar / Booking Proyek"
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "items": [
+      {
+        "question": "Layanan apa saja yang disediakan rzbar.std?",
+        "answer": "Kami menawarkan layanan kreatif dan berbasis data seperti branding, desain grafis, pengembangan web & landing page, hingga pelaporan data."
+      },
+      {
+        "question": "Apakah kalian melayani klien internasional?",
+        "answer": "Ya! Tim kami bekerja dengan klien global melalui komunikasi online dan tools manajemen proyek."
+      },
+      {
+        "question": "Berapa lama waktu pengerjaan proyek?",
+        "answer": "Durasi proyek menyesuaikan kompleksitas — rata-rata 1 hingga 4 minggu. Timeline akan ditetapkan saat konsultasi."
+      },
+      {
+        "question": "Bisakah request solusi custom?",
+        "answer": "Tentu. Setiap proyek dibuat sesuai tujuan bisnis Anda, mulai dari visual hingga integrasi pelaporan data."
+      }
+    ]
   },
   "footer": {
-    "rights": "© 2025 RZBAR.STD — Hak Cipta Dilindungi"
+    "ctaTitle": "Mari bangun proyek berikutnya bersama!",
+    "ctaButton": "Mulai proyek",
+    "sitemap": "Peta situs",
+    "socials": "Media sosial",
+    "rights": "© 2025 rzbar.std — Layanan Desain & Data. Dibuat dengan ❤️ dari Kalimantan."
+  },
+  "comingSoon": {
+    "title": "Segera Hadir",
+    "description": "Fitur ini belum tersedia. Kami sedang mengembangkannya!"
+  },
+  "blog": {
+    "title": "Blog & Insight",
+    "back": "← Kembali ke semua artikel"
   }
 }

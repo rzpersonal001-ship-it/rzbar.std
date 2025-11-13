@@ -4,28 +4,157 @@
     "profil": "Profile",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact / Pay"
   },
   "hero": {
-    "title": "Design. Data. Impact.",
+    "status": "Available for Collaborations",
+    "titleLines": ["Design,", "Data,", "Impact."],
     "subtitle": "We design visuals, build websites, and turn data into business impact.",
-    "cta": "Let’s Collaborate"
+    "highlights": [
+      { "title": "Design", "description": "Visuals that", "highlight": "connect" },
+      { "title": "Web", "description": "Websites that", "highlight": "perform" },
+      { "title": "Data", "description": "Reports that guide", "highlight": "decisions" }
+    ],
+    "ctaPrimary": "Let’s Talk – Free Consultation",
+    "ctaSecondary": "Explore Services"
   },
   "profil": {
-    "title": "About Us",
-    "description": "We are a creative team specializing in modern web design, UI/UX, and data-driven solutions."
+    "description": "Welcome! I'm Reza, a creative professional working with my team to help individuals and businesses communicate more effectively through impactful design and data solutions. Combining visual creativity with technical precision, we transform your ideas into high-quality visuals and smart reports that are both beautiful and functional.",
+    "stats": [
+      { "label": "Projects completed", "number": 99 },
+      { "label": "Years of experience", "number": 5 }
+    ]
   },
   "services": {
     "title": "Our Services",
-    "uiux": "UI/UX Design",
-    "webdev": "Web Development",
-    "data": "Data Visualization"
+    "description": "We provide impactful, authentic, and data-driven creative services designed to help your business grow with purpose and precision.",
+    "note": "Looking for a custom service or collaboration?",
+    "cta": "Let’s discuss your project.",
+    "cards": {
+      "branding": {
+        "title": "Branding & Graphic Design",
+        "description": "From logo creation to full visual identity systems, we craft authentic and memorable brand visuals that resonate with your audience.",
+        "items": [
+          "Logo & Brand Identity",
+          "Flyer & Brochure Design",
+          "CV / Resume Design",
+          "Packaging Design",
+          "Poster & Banner Design",
+          "Social Media Content"
+        ]
+      },
+      "web": {
+        "title": "Web & Landing Page Development",
+        "description": "We design and build high-performing, responsive websites and landing pages optimized for both user experience and conversion.",
+        "items": [
+          "Personal Portfolio",
+          "Company Profile Website",
+          "Landing Page Campaign",
+          "WordPress Setup & Theme Customization",
+          "Frontend (React JS, Tailwind CSS)"
+        ]
+      },
+      "data": {
+        "title": "Business Data & Accounting Solutions",
+        "description": "Transform your raw data into meaningful financial and operational insights. We provide data automation, business reporting, and accounting consulting to help you make smarter decisions.",
+        "items": [
+          "Excel Dashboard & Reporting",
+          "Financial Data Automation",
+          "Accounting System Setup",
+          "Business & Cost Analysis",
+          "Financial Consulting"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "Tools That Power Our Work",
+    "description": "Discover the creative tools and technologies our team relies on to craft impactful, modern, and visually compelling projects.",
+    "categories": {
+      "all": "All",
+      "graphic": "Graphic Design",
+      "web": "Web & Landing Page",
+      "data": "Data & Document Service",
+      "finance": "Accounting & Finance"
+    },
+    "tools": {
+      "figma": { "label": "Figma", "description": "Design tool" },
+      "photoshop": { "label": "Photoshop", "description": "Photo Editing" },
+      "illustrator": { "label": "Illustrator", "description": "Vector & Branding" },
+      "wordpress": { "label": "WordPress", "description": "Site & Blog Setup" },
+      "react": { "label": "React JS", "description": "Frontend Framework" },
+      "excel": { "label": "Excel (Advanced Level)", "description": "Data & Reporting" },
+      "lightroom": { "label": "Lightroom", "description": "Color Grading" },
+      "canva": { "label": "Canva", "description": "Content Design" },
+      "indesign": { "label": "InDesign", "description": "Layout & Publishing" },
+      "vscode": { "label": "Visual Code", "description": "Code Editing Tool" },
+      "tailwind": { "label": "Tailwind CSS", "description": "Utility CSS Styling" },
+      "word": { "label": "Word", "description": "Document Design" },
+      "powerpoint": { "label": "PowerPoint", "description": "Slide Presentation" },
+      "accurate": { "label": "Accurate", "description": "Accounting & Finance" }
+    }
+  },
+  "portfolio": {
+    "title": "My portfolio highlights",
+    "categories": {
+      "all": "All",
+      "web": "Web Development",
+      "uiux": "UI/UX Design"
+    }
   },
   "contact": {
-    "title": "Let's Connect",
-    "button": "Send Message"
+    "title": "Contact me for collaboration",
+    "description": "Reach out today to discuss your project needs and start collaborating on something amazing!",
+    "address": "Jl. Kuin Selatan, Kec. Banjarmasin Barat, Kota Banjarmasin, Kalimantan Selatan 70123",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "rzbar.std@gmail.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Ready to start your next project? Let’s create something impactful together."
+    },
+    "submit": "Submit",
+    "quickResponse": "Prefer quick response or instant booking? Choose one below 👇",
+    "whatsapp": "Chat via WhatsApp",
+    "payment": "Pay / Book Project"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What services does rzbar.std provide?",
+        "answer": "We offer creative and data-driven services such as branding, graphic design, web & landing page development, and data analytics reporting."
+      },
+      {
+        "question": "Do you work with international clients?",
+        "answer": "Yes! Our team collaborates with clients globally through online communication and project management tools."
+      },
+      {
+        "question": "How long does it take to complete a project?",
+        "answer": "Project duration depends on complexity — typically between 1 to 4 weeks. We always set clear timelines during consultation."
+      },
+      {
+        "question": "Can I request custom solutions?",
+        "answer": "Absolutely. Every project is tailored to your business goals, from visuals to data reporting integrations."
+      }
+    ]
   },
   "footer": {
-    "rights": "© 2025 RZBAR.STD — All Rights Reserved"
+    "ctaTitle": "Let's build your next project together!",
+    "ctaButton": "Start project",
+    "sitemap": "Sitemap",
+    "socials": "Socials",
+    "rights": "© 2025 rzbar.std — Design & Data Services. Crafted with ❤️ from Kalimantan."
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "description": "This feature is not available yet. We're working on it!"
+  },
+  "blog": {
+    "title": "Blog & Insights",
+    "back": "← Back to all posts"
   }
 }

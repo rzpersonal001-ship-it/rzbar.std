@@ -5,32 +5,12 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What services does rzbar.std provide?",
-    answer:
-      "We offer creative and data-driven services such as branding, graphic design, web & landing page development, and data analytics reporting.",
-  },
-  {
-    question: "Do you work with international clients?",
-    answer:
-      "Yes! Our team collaborates with clients globally through online communication and project management tools.",
-  },
-  {
-    question: "How long does it take to complete a project?",
-    answer:
-      "Project duration depends on complexity — typically between 1 to 4 weeks. We always set clear timelines during consultation.",
-  },
-  {
-    question: "Can I request custom solutions?",
-    answer:
-      "Absolutely. Every project is tailored to your business goals, from visuals to data reporting integrations.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const { t } = useTranslation();
+  const faqContent = t("faq", { returnObjects: true });
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -39,9 +19,9 @@ const FAQ = () => {
   return (
     <section id="faq" className="section">
       <div className="container max-w-3xl mx-auto">
-        <h2 className="headline-2 mb-8">Frequently Asked Questions</h2>
+        <h2 className="headline-2 mb-8">{faqContent.title}</h2>
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqContent.items?.map((faq, index) => (
             <div
               key={index}
               className="border border-zinc-700/50 rounded-xl p-4 hover:bg-zinc-800/50 transition"

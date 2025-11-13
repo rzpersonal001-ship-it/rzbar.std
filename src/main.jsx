@@ -23,7 +23,7 @@ import App from './App.jsx';
 import './index.css';
 import 'lenis/dist/lenis.css';
 
-import "./i18n"; 
+import "./i18n/index.js";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

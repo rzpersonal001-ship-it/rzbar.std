@@ -8,29 +8,14 @@
  * Components
  */
 import { ButtonPrimary } from "./Button";
+import { useTranslation } from "react-i18next";
 
 
 const sitemap = [
-  {
-    label: 'Home',
-    href: '#home'
-  },
-  {
-    label: 'Profil',
-    href: '#profil'
-  },
-  {
-    label: 'Portofolio',
-    href: '#portofolio'
-  },
-  // {
-  //   label: 'Reviews',
-  //   href: '#reviews'
-  // },
-  {
-    label: 'Contact/Pay',
-    href: '#contact'
-  }
+  { key: "home", href: "#home" },
+  { key: "profil", href: "#profil" },
+  { key: "portfolio", href: "#portofolio" },
+  { key: "contact", href: "#contact" },
 ];
 
 const socials = [
@@ -58,6 +43,8 @@ const socials = [
 
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="section">
       <div className="container">
@@ -66,12 +53,12 @@ const Footer = () => {
 
           <div className="mb-10">
             <h2 className="headline-1 mb-8 lg:max-w-[12ch] reveal-up">
-              Let's build your next project together!
+              {t("footer.ctaTitle")}
             </h2>
 
             <ButtonPrimary
               href="mailto:404rezaakbar@gmail.com?subject=Project%20Inquiry%20from%20rzbar.std%20Website&body=Hi%20Reza%2C%0A%0AI%27m%20interested%20in%20starting%20a%20project%20with%20you.%0AHere%20are%20some%20details%20about%20what%20I%27m%20looking%20for%3A%0A%0A-%20Project%20type%3A%0A-%20Deadline%3A%0A-%20Budget%20range%3A%0A%0AThank%20you%21"
-              label="Start project"
+              label={t("footer.ctaButton")}
               icon="chevron_right"
               classes="reveal-up"
             />
@@ -81,16 +68,16 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-4 lg:pl-20">
 
             <div>
-              <p className="mb-2 reveal-up">Sitemap</p>
+              <p className="mb-2 reveal-up">{t("footer.sitemap")}</p>
 
               <ul>
-                {sitemap.map(({ label, href }, key) => (
-                  <li key={key}>
+                {sitemap.map(({ key: labelKey, href }) => (
+                  <li key={labelKey}>
                     <a
                       href={href}
                       className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                     >
-                      {label}
+                      {t(`nav.${labelKey}`)}
                     </a>
                   </li>
                 ))}
@@ -98,7 +85,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className="mb-2 reveal-up">Socials</p>
+              <p className="mb-2 reveal-up">{t("footer.socials")}</p>
 
               <ul>
                 {socials.map(({ label, href }, key) => (
@@ -132,9 +119,7 @@ const Footer = () => {
             />
           </a>
 
-          <p className="text-zinc-500 text-sm reveal-up">
-            &copy; 2025 <span className="text-zinc-200">rzbar.std — Design & Data Services. Crafted with ❤️ from Kalimantan.</span>
-          </p>
+          <p className="text-zinc-500 text-sm reveal-up">{t("footer.rights")}</p>
         </div>
 
       </div>

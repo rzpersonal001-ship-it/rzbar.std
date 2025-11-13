@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
  */
 import Navbar from "./Navbar";
 import { useLanguage } from "../context/LanguageContext"; // ✅ Import context
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
 
   // ✅ Ambil state bahasa dari context (bukan lokal lagi)
   const { lang, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   // ✅ Deteksi scroll untuk efek background header
   useEffect(() => {
@@ -108,7 +110,7 @@ const Header = () => {
             href="#contact"
             className="btn btn-secondary max-md:hidden"
           >
-            {lang === "en" ? "Contact / Pay" : "Kontak / Bayar"}
+            {t("nav.contact")}
           </a>
         </div>
       </div>

@@ -5,36 +5,39 @@
 
 import { useState } from "react";
 import SkillCard from "./SkillCard";
+import { useTranslation } from "react-i18next";
 
 const skillItem = [
-  { imgSrc: "/images/figma.svg", label: "Figma", desc: "Design tool", category: "graphic" },
-  { imgSrc: "/images/psd.svg", label: "Photoshop", desc: "Photo Editing", category: "graphic" },
-  { imgSrc: "/images/Ill.svg", label: "Illustrator", desc: "Vector & Branding", category: "graphic" },
-  { imgSrc: "/images/wp.svg", label: "WordPress", desc: "Site & Blog Setup", category: "web" },
-  { imgSrc: "/images/reactjs.svg", label: "React JS", desc: "Frontend Framework", category: "web" },
-  { imgSrc: "/images/Excel.svg", label: "Excel (Advanced Level)", desc: "Data & Reporting", category: "data" },
-  { imgSrc: "/images/light.svg", label: "Lightroom", desc: "Color Grading", category: "graphic" },
-  { imgSrc: "/images/canva.svg", label: "Canva", desc: "Content Design", category: "graphic" },
-  { imgSrc: "/images/Ind.svg", label: "InDesign", desc: "Layout & Publishing", category: "graphic" },
-  { imgSrc: "/images/vscode.svg", label: "Visual Code", desc: "Code Editing Tool", category: "web" },
-  { imgSrc: "/images/tailwind.svg", label: "Tailwind CSS", desc: "Utility CSS Styling", category: "web" },
-  { imgSrc: "/images/Word.svg", label: "Word", desc: "Document Design", category: "data" },
-  { imgSrc: "/images/Point.svg", label: "Power Point", desc: "Slide Presentation", category: "data" },
-  { imgSrc: "/images/accurate.svg", label: "Accurate", desc: "Accounting & Finance", category: "finance" },
+  { imgSrc: "/images/figma.svg", key: "figma", category: "graphic" },
+  { imgSrc: "/images/psd.svg", key: "photoshop", category: "graphic" },
+  { imgSrc: "/images/Ill.svg", key: "illustrator", category: "graphic" },
+  { imgSrc: "/images/wp.svg", key: "wordpress", category: "web" },
+  { imgSrc: "/images/reactjs.svg", key: "react", category: "web" },
+  { imgSrc: "/images/Excel.svg", key: "excel", category: "data" },
+  { imgSrc: "/images/light.svg", key: "lightroom", category: "graphic" },
+  { imgSrc: "/images/canva.svg", key: "canva", category: "graphic" },
+  { imgSrc: "/images/Ind.svg", key: "indesign", category: "graphic" },
+  { imgSrc: "/images/vscode.svg", key: "vscode", category: "web" },
+  { imgSrc: "/images/tailwind.svg", key: "tailwind", category: "web" },
+  { imgSrc: "/images/Word.svg", key: "word", category: "data" },
+  { imgSrc: "/images/Point.svg", key: "powerpoint", category: "data" },
+  { imgSrc: "/images/accurate.svg", key: "accurate", category: "finance" },
 ];
 
 // kategori
 const categories = [
-  { slug: "all", label: "All" },
-  { slug: "graphic", label: "Graphic Design" },
-  { slug: "web", label: "Web & Landing Page" },
-  { slug: "data", label: "Data & Document Service" },
-  { slug: "finance", label: "Accounting & Finance" },
+  { slug: "all" },
+  { slug: "graphic" },
+  { slug: "web" },
+  { slug: "data" },
+  { slug: "finance" },
 ];
 
 const Skill = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const { t } = useTranslation();
+  const skillsContent = t("skills", { returnObjects: true });
 
   const itemsPerPage = 6; // tampilkan 6 per halaman
 
@@ -70,14 +73,14 @@ const Skill = () => {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="headline-2 reveal-up">Tools That Power Our Work</h2>
+        <h2 className="headline-2 reveal-up">{skillsContent.title}</h2>
         <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">
-          Discover the creative tools and technologies our team relies on to craft impactful, modern, and visually compelling projects.
+          {skillsContent.description}
         </p>
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {categories.map(({ slug, label }) => (
+          {categories.map(({ slug }) => (
             <button
               key={slug}
               onClick={() => handleCategory(slug)}
@@ -87,16 +90,26 @@ const Skill = () => {
                   : "border-zinc-600 text-zinc-400 hover:text-white hover:border-white/60"
               }`}
             >
-              {label}
+              {skillsContent.categories?.[slug]}
             </button>
           ))}
         </div>
 
         {/* Grid tools */}
         <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {paginatedItems.map(({ imgSrc, label, desc }, key) => (
-            <SkillCard key={key} imgSrc={imgSrc} label={label} desc={desc} classes="" />
-          ))}
+          {paginatedItems.map(({ imgSrc, key }, index) => {
+            const tool = skillsContent.tools?.[key];
+            if (!tool) return null;
+            return (
+              <SkillCard
+                key={`${key}-${index}`}
+                imgSrc={imgSrc}
+                label={tool.label}
+                desc={tool.description}
+                classes=""
+              />
+            );
+          })}
         </div>
 
         {/* Pagination */}
